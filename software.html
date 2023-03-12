@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Harrison Nicholls</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<h1> Harrison Nicholls / Software</h1>
+
+		<a href="index.html">&nwarrow; go up to Index</a>
+		<br /><br />
+		&downarrow; jump to: <a href="#personal">Personal</a>, <a href="#research">Research</a>
+
+		<h2>Preface</h2>
+			This page indexes a number of software projects I've created or been heavily involved with. It is not an 
+			exhaustive list, and I've tried to keep each case quite brief. There's more information on each project on
+			their dedicated pages, which are hyperlinked in each section below. The lists are chronological; most recent
+			first.
+		
+		<h2>Context</h2>
+			My first programming language was Java. I learned this at age 12, and used it to make some platformer video 
+			games with LWJGL (the same library that Minecraft uses). At around the same time I also learned some web 
+			design,	which has not improved much since. At some point soon after I also picked up Python.
+			<br /><br />
+
+			After dabbling with a variety of languages I eventually landed at C, which I fell in love with immediately. 
+			My favourite aspect of C is its low-level memory manipulation which provides a precision which few languages 
+			can come close to. It also has little computational overhead, and has a concise syntax (unlike Java). 
+			Structs are a super neat way to pass data around, and I've found that they provide a lightweight and 
+			flexible alternative to	OOP. To date, C is my favourite language and I try to use it when I can. Sometimes 
+			I find that C++ is helpful as well.
+			<br /><br />
+
+			Most astrophysical and atmospheric codes are written in Fortran 90. The performance of F90 comes close to 
+			that of C, although this also factors in the skill of the person doing the programming. There's a lot of 
+			legacy code written in Fortran hanging around, so I think it's a really helpful language to know. Physicsts 
+			and code can be a dangerous combination, but Fortran has made this precarious relationship reasonably 
+			manageable. 
+			<br /><br />
+
+			Python is incredible for data science. I use it for all my post-processing and plotting. There exists a vast 
+			array of libraries out there which can fill 95% of your needs. I would argue that Python is frequently 
+			applied in inappropriate contexts in the wild; I try to avoid adding to this problem by avoiding Python in 
+			many cases, although it can be helpful for prototyping. Dynamic typing is one of Python's most prominent 
+			features, but it's probably one that I dislike the most.
+			<br /><br />
+
+			While I mostly use macOS for work, I much prefer the environment of GNU+Linux. Arch Linux with X11 GNOME has 
+			treated me reasonably well in recent years.
+
+
+		<div id="personal"></div>
+		<h2>My personal projects</h2>
+
+			<!-- Wisteria ray tracing engine -->
+			<div id="wisteria"></div>
+			<h3 class="tab1">Wisteria</h3>
+			<p class="tab2">
+				<i>Scriptable parallelised ray-tracing engine written in C++.</i>  
+				<br /><br />
+
+				Wisteria renders scenes of objects to an image by projecting rays out of the camera and testing for their 
+				intersections with objects. At each intersection, the rays reflect, transmit, refract, scatter, and attenuate. 
+				Wisteria has the capacity to load objects from files on the disk. It's highly configurable and scriptable, 
+				although there's no formal documentation thus far. It supports distributed light sources and monte-carlo 
+				diffuse/specular reflections. It was developed for Linux, but also works on MacOS. There are example
+				images and animations on the GitLab repository.
+				<br /><br />
+
+				<a href="https://gitlab.com/nichollsh/wisteria" target="_blank">View Wisteria on GitLab</a>
+			</p>
+
+			<!--Website -->
+			<div id="website"></div>
+			<h3 class="tab1">Website</h3>
+			<p class="tab2">
+				<i>Simple HTML5+CSS website for indexing research, projects, etc.</i>  
+				<br /><br />
+
+				I am not a web developer, which is likely evident from the site itself. I made the website for a number
+				of reasons, the primary one being to index various projects and share them more easily. The secondary 
+				purpose of the website is to outline my research projects in a single location. The tertiary purpose of 
+				the website is to provide a profile of myself for others to read, if necessary.
+				<br /><br /> 
+				
+				<a href="https://github.com/nichollsh/nichollsh.github.io" target="_blank">View Website source on GitHub</a>
+			</p>
+
+			<!-- Planetary simulation game -->
+			<div id="planetary"></div>
+			<h3 class="tab1">Planetary [game]</h3>
+			<p class="tab2">
+				<i>Proof of concept game focused on the Martian landscape.</i>  
+				<br /><br />
+
+				This was developed as a proof of concept. Inspired by Kim Stanley Robinson's "Mars" series, I wanted to 
+				develop some software which allowed you to interact with the Martian landscape across a range of spatial
+				and temporal time-scales. It uses data from the MRO (NASA), splitting the suface into tiles such that 
+				the user can zoom in on regions of interest, while maintaining a high resolution. Ideally, the hydrology
+				would respond to both rhelogical and atmospheric changes. This project has effectively been abandoned; 
+				some elements tie in closely with my research and are explored there much more scientifically.
+				<br /><br /> 
+				
+				<a href="https://gitlab.com/nichollsh/planetary-game" target="_blank">View Planetary on GitLab</a>
+			</p>
+
+			<!-- Magic: The Gathering card printer (GUI) -->
+			<div id="magic_printer"></div>
+			<h3 class="tab1">Magic Printer</h3>
+			<p class="tab2">
+				<i>GUI for producing proxy cards for Magic: The Gathering.</i>  
+				<br /><br />
+
+				'Magic: The Gathering' is a table-top card game where people compete against each other using decks
+				of various cards. The cards usually cost money, but by making fake versions ("proxies"), you can play 
+				the game without spending much money. This Python code parses a deck file (.txt) and produces images of
+				the cards required to play with such a deck. The GUI allows the user to customise their deck through
+				various options and sliders. The resultant images are intended to be used with 'FreePrints', an
+				Android app which lets you print images cheaply.
+				<br /><br /> 
+				
+				<a href="https://gitlab.com/nichollsh/magic-printer" target="_blank">View Magic Printer on GitLab</a>
+			</p>
+			
+			<!-- Dripping tap -->
+			<div id="dripping_tap"></div>
+			<h3 class="tab1">Dripping tap</h3>
+			<p class="tab2">
+				<i>Simple model of a dripping tap which can behave chaotically.</i>  
+				<br /><br />
+
+				Toy model of a dripping tap which can exhibit strongly non-linear behaviour in certain flow regimes.
+				This code is based on an existing model in the literature, although this implementation is entirely my 
+				own work. Like the logistic map, this model is a really beautiful example of a simple system exhibiting 
+				complex behaviour in certain regions of parameter space. As this code was developed for an undergraduate 
+				project, there's a short report in the GitLab repository which validates the model and analyses its 
+				behaviour. It'd be interesting to benchmark this against a hydrodynamical code, or even a real tap.
+				<br /><br /> 
+				
+				<a href="https://gitlab.com/nichollsh/chaotic-dripping" target="_blank">View Chaotic Dripping on GitLab</a>
+			</p>
+
+			<!-- N-body project -->
+			<div id="nbody"></div>
+			<h3 class="tab1">N-body integrator</h3>
+			<p class="tab2">
+				<i>Velocity verlet integrator of N-body gravitational systems.</i>  
+				<br /><br />
+
+				This code evolves a system of massive bodies over time, accounting for their mutual gravitational 
+				interactions, assuming newtonian physics. The integrator uses the velocity-verlet method to accurately 
+				step the model forward in time. It supports dynamic time-stepping, which is helpful in cases where the
+				bodies are rapidly accelerating. There's also a Python script for animating the simulation output. It's 
+				possible to set-up the model with complex systems: it has been used to model the solar system, including
+				the Sun, planets, asteroids, and moons.
+				<br /><br /> 
+				
+				<a href="https://gitlab.com/nichollsh/nbody-project" target="_blank">View N-body Project on GitLab</a>
+			</p>
+
+			<!-- Conway's Game of Life -->
+			<div id="conway"></div>
+			<h3 class="tab1">Conway's Game of Life</h3>
+			<p class="tab2">
+				<i>Interactive implementation of the titular game written in C.</i>  
+				<br /><br />
+
+				Conway's Game of Life is an algorithm which is played on a 2D cartesian grid. Each cell of the grid is 
+				in a boolean state (alive/dead), and evolves according to a set of rules. The game evolves iteratively, 
+				with the rules determining, based on its neighbours, if each cell changes its state. This is meant to 
+				mimic population dynamics, although it's famous for producing a large array of patterns and 'machines'.
+				<br /><br /> 
+
+				This project was originally started out of my own interest, however the timing was fortunate enough that
+				it was assigned as a final project for an undergraduate module mid-way through its development. This 
+				software implements the titular game in C, rendering it live to a GUI using GFLW. It allows the user
+				to save and load game states from the disk, as well as interact via keyboard and mouse.
+				<br /><br /> 
+				
+				<a href="https://gitlab.com/nichollsh/conways-game-of-life" target="_blank">View Conway's Game of Life on GitLab</a>
+			</p>
+			
+
+
+		<div id="research"></div>
+		<h2>Research related</h2>
+	
+		<!-- ATMO -->
+		<div id="atmo"></div>
+		<h3 class="tab1">ATMO&dagger;</h3>
+		<p class="tab2">
+			<i>Radiative-convective photochemical kinetics model for gassy planets.</i>  
+			<br /><br />
+
+			ATMO is a 1D model of the atmospheres of gas planets. It can evolve the chemistry of these planets over 
+			time using a photochemical kinetics model, as well as solve for equilibrium abundances. The headline 
+			feature of ATMO is that it can self-consistently solve for these atmospheres by re-adjusting the 
+			temperature profile to radiative-convective equilibrium while integrating the chemistry. The model can
+			also generate transmission and emission spectra, and has been extensively used for retrievals. It's written 
+			in Fortran 90, and has been adapted for 2D modelling in some contexts.
+			<br /><br />
+
+			&dagger; Note that I did not lead the development of ATMO. My contributions to the code enabled some 
+			research, however the majority of the code had already existed for a long time before I came near it.
+			<br /><br />
+
+			<a href="https://www.erc-atmo.eu/?page_id=322" target="_blank">View the ATMO project website</a>
+		</p>
+
+	</body>
+</html>
