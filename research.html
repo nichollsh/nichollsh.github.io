@@ -9,6 +9,8 @@
 		<h1> Harrison Nicholls / Research </h1>
 
 		<a href="index.html">&nwarrow; go up to Index</a>
+		<br /><br />
+		&downarrow; jump to: <a href="#projects">Science</a>, <a href="#tools">Tools and models</a>
 
 		<div id="preface"></div>
 		<h2>Preface</h2>
@@ -18,7 +20,7 @@
 			order, newest first.
 		</p>
 
-		<div id="projects"></div>
+		<div id="science"></div>
 		<h2>Research projects</h2>
 
 			<!-- Dummy project -->
@@ -34,6 +36,31 @@
 				<a href="." target="_blank">Hyperlink here</a>
 			</p>
 
+
+		<div id="tools"></div>
+		<h2>Tools and models</h2>
+		
+			<!-- ATMO -->
+			<div id="atmo"></div>
+			<h3 class="tab1">ATMO</h3>
+			<p class="tab2">
+				<i>Radiative-convective photochemical kinetics model for gassy planets.</i>  
+				<br /><br />
+
+				ATMO is a 1D model of the atmospheres of gas planets. It can evolve the chemistry of these planets over 
+				time using a photochemical kinetics model, as well as solve for equilibrium abundances. The headline 
+				feature of ATMO is that it can self-consistently solve for these atmospheres by re-adjusting the 
+				temperature profile to radiative-convective equilibrium while integrating the chemistry. The model can
+				also generate transmission and emission spectra, and has been extensively used for retrievals. It's written 
+				in Fortran 90, and has been adapted for 2D modelling in some contexts.
+				<br /><br />
+
+				Note that I did not lead the development of ATMO. My contributions to the code enabled some 
+				research, however the majority of the code had already existed for a long time before I came near it.
+				<br /><br />
+
+				<a href="https://www.erc-atmo.eu/?page_id=322" target="_blank">View the ATMO project website</a>
+			</p>
 
 
 	</body>

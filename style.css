@@ -19,9 +19,10 @@ h2 {
 
 body {
 	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-	background-color: #e5e5e5;
+	background-color: rgb(237, 237, 237);
+	color: rgb(50, 48, 48);
 	font-size: 1.0em;
-	max-width: 35em;
+	max-width: 38em;
     word-wrap:break-word;
 	text-align: left;
 	padding-left: 1em;
