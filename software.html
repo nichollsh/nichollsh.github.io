@@ -14,7 +14,8 @@
 		<h2>Preface</h2>
 			This page indexes a number of computing projects I've developed by myself, mostly for fun. It is not an 
 			exhaustive list, and I've tried to keep each case quite brief. There's more information on each project on
-			their dedicated pages, which are hyperlinked in each section below. 
+			their dedicated pages, which are hyperlinked in each section below. I've also included a short list of 
+			software project ideas which I've yet to start on.
 			<br /><br />
 			I've split up the projects into two	categories: personal and research. The projects in each category are 
 			listed in chronological order, newest first. Projects marked with an asterisk&ast; are considered complete.
@@ -52,141 +53,148 @@
 			While I mostly use macOS for work, I much prefer the environment of GNU+Linux. Arch Linux with X11 GNOME has 
 			treated me reasonably well in recent years.
 
+		<div id="projects"></div>
+		<h2>List of software</h2>
 
-		<!-- Wisteria ray tracing engine -->
-		<div id="wisteria"></div>
-		<h3 class="tab1">Wisteria</h3>
-		<p class="tab2">
-			[2022] <i>Scriptable parallelised standalone ray-tracing engine.</i>  
-			<br /><br />
+			<!-- Wisteria ray tracing engine -->
+			<div id="wisteria"></div>
+			<h3 class="tab1">Wisteria</h3>
+			<p class="tab2">
+				[2022] <i>Scriptable parallelised standalone ray-tracing engine.</i>  
+				<br /><br />
 
-			Wisteria renders scenes of objects to an image by projecting rays out of the camera and testing for their 
-			intersections with objects. At each intersection, the rays reflect, transmit, refract, scatter, and attenuate. 
-			Wisteria has the capacity to load objects from files on the disk. It's highly configurable and scriptable, 
-			although there's no formal documentation thus far. It supports distributed light sources and monte-carlo 
-			shadows & diffuse/specular reflections. It was developed for Linux, can also run on MacOS. There are example
-			images and animations on the GitLab repository. It was originally prototyped in Python, but is now written 
-			in C++. Wisteria makes use of two optional libraries for file processing, but is otherwise standalone.
-			<br /><br />
+				Wisteria renders scenes of objects to an image by projecting rays out of the camera and testing for their 
+				intersections with objects. At each intersection, the rays reflect, transmit, refract, scatter, and attenuate. 
+				Wisteria has the capacity to load objects from files on the disk. It's highly configurable and scriptable, 
+				although there's no formal documentation thus far. It supports distributed light sources and monte-carlo 
+				shadows & diffuse/specular reflections. It was developed for Linux, can also run on MacOS. There are example
+				images and animations on the GitLab repository. It was originally prototyped in Python, but is now written 
+				in C++. Wisteria makes use of two optional libraries for file processing, but is otherwise standalone.
+				<br /><br />
 
-			<a href="https://gitlab.com/nichollsh/wisteria" target="_blank">View Wisteria on GitLab</a>
-		</p>
+				<a href="https://gitlab.com/nichollsh/wisteria" target="_blank">View Wisteria on GitLab</a>
+			</p>
 
-		<!--Website -->
-		<div id="website"></div>
-		<h3 class="tab1">Website</h3>
-		<p class="tab2">
-			[2023] <i>Simple static website for indexing research, projects, etc.</i>  
-			<br /><br />
+			<!--Website -->
+			<div id="website"></div>
+			<h3 class="tab1">Website</h3>
+			<p class="tab2">
+				[2023] <i>Simple static website for indexing research, projects, etc.</i>  
+				<br /><br />
 
-			I am not a web developer, which is likely evident from the site itself. I made the website for a number
-			of reasons, the primary one being to index various projects and share them more easily. The secondary 
-			purpose of the website is to outline my research projects in a single location. The tertiary purpose of 
-			the website is to provide a profile of myself for others to read, if necessary. Written in HTML5 and CSS.
-			<br /><br /> 
+				I am not a web developer, which is likely evident from the site itself. I made the website for a number
+				of reasons, the primary one being to index various projects and share them more easily. The secondary 
+				purpose of the website is to outline my research projects in a single location. The tertiary purpose of 
+				the website is to provide a profile of myself for others to read, if necessary. Written in HTML5 and CSS.
+				<br /><br /> 
+				
+				<a href="https://github.com/nichollsh/nichollsh.github.io" target="_blank">View Website source on GitHub</a>
+			</p>
+
+			<!-- Planetary simulation game -->
+			<div id="planetary"></div>
+			<h3 class="tab1">Planetary game</h3>
+			<p class="tab2">
+				[2020]&dagger; <i>Proof of concept game focused on the Martian landscape.</i>  
+				<br /><br />
+
+				This was developed as a proof of concept. Inspired by Kim Stanley Robinson's "Mars" series, I wanted to 
+				develop some software which allowed you to interact with the Martian landscape across a range of spatial
+				and temporal time-scales. It uses data from the MRO (NASA), splitting the suface into tiles such that 
+				the user can zoom in on regions of interest, while maintaining a high resolution. Ideally, the hydrology
+				would respond to both rhelogical and atmospheric changes. This project has effectively been abandoned; 
+				some elements tie in closely with my research and are explored there much more scientifically. Written in C.
+				<br /><br /> 
+				
+				<a href="https://gitlab.com/nichollsh/planetary-game" target="_blank">View Planetary on GitLab</a>
+			</p>
+
+			<!-- Dripping tap -->
+			<div id="dripping_tap"></div>
+			<h3 class="tab1">Dripping tap</h3>
+			<p class="tab2">
+				[2022]&ast; <i>Simple model of a dripping tap which can behave chaotically.</i>  
+				<br /><br />
+
+				Toy model of a dripping tap which can exhibit strongly non-linear behaviour in certain flow regimes.
+				This code is based on an existing model in the literature, although this implementation is entirely my 
+				own work. Like the logistic map, this model is a really beautiful example of a simple system exhibiting 
+				complex behaviour in certain regions of parameter space. As this code was developed for an undergraduate 
+				project, there's a short report in the GitLab repository which validates the model and analyses its 
+				behaviour. It'd be interesting to benchmark this against a hydrodynamical code, or even a real tap. Written
+				in C, and depends heavily on the GNU Scientific Library.
+				<br /><br /> 
+				
+				<a href="https://gitlab.com/nichollsh/chaotic-dripping" target="_blank">View Chaotic Dripping on GitLab</a>
+			</p>
 			
-			<a href="https://github.com/nichollsh/nichollsh.github.io" target="_blank">View Website source on GitHub</a>
-		</p>
 
-		<!-- Planetary simulation game -->
-		<div id="planetary"></div>
-		<h3 class="tab1">Planetary game</h3>
-		<p class="tab2">
-			[2020]&dagger; <i>Proof of concept game focused on the Martian landscape.</i>  
-			<br /><br />
+			<!-- Magic: The Gathering card printer (GUI) -->
+			<div id="magic_printer"></div>
+			<h3 class="tab1">Magic Printer</h3>
+			<p class="tab2">
+				[2021]&ast; <i>GUI for producing proxy cards for Magic: The Gathering.</i>  
+				<br /><br />
 
-			This was developed as a proof of concept. Inspired by Kim Stanley Robinson's "Mars" series, I wanted to 
-			develop some software which allowed you to interact with the Martian landscape across a range of spatial
-			and temporal time-scales. It uses data from the MRO (NASA), splitting the suface into tiles such that 
-			the user can zoom in on regions of interest, while maintaining a high resolution. Ideally, the hydrology
-			would respond to both rhelogical and atmospheric changes. This project has effectively been abandoned; 
-			some elements tie in closely with my research and are explored there much more scientifically. Written in C.
-			<br /><br /> 
+				'Magic: The Gathering' is a table-top card game where people compete against each other using decks
+				of various cards. The cards usually cost money, but by making fake versions ("proxies"), you can play 
+				the game without spending much money. This practice is legal as long as the proxies are not sold.
+				<br /><br /> 
+				
+				This Python code processes a file (.txt) containing all the cards in your deck, and produces images of
+				the cards required to play with such a deck. The GUI allows the user to customise their deck through
+				various options and sliders. The resultant images are intended to be used with 'FreePrints', an
+				Android app which lets you print images cheaply. Written in Python, using Qt for the interface.
+				<br /><br /> 
+				
+				<a href="https://gitlab.com/nichollsh/magic-printer" target="_blank">View Magic Printer on GitLab</a>
+			</p>
 			
-			<a href="https://gitlab.com/nichollsh/planetary-game" target="_blank">View Planetary on GitLab</a>
-		</p>
 
-		<!-- Dripping tap -->
-		<div id="dripping_tap"></div>
-		<h3 class="tab1">Dripping tap</h3>
-		<p class="tab2">
-			[2022]&ast; <i>Simple model of a dripping tap which can behave chaotically.</i>  
-			<br /><br />
+			<!-- N-body project -->
+			<div id="nbody"></div>
+			<h3 class="tab1">N-body integrator</h3>
+			<p class="tab2">
+				[2021]&ast; <i>Velocity verlet integrator of N-body gravitational systems.</i>  
+				<br /><br />
 
-			Toy model of a dripping tap which can exhibit strongly non-linear behaviour in certain flow regimes.
-			This code is based on an existing model in the literature, although this implementation is entirely my 
-			own work. Like the logistic map, this model is a really beautiful example of a simple system exhibiting 
-			complex behaviour in certain regions of parameter space. As this code was developed for an undergraduate 
-			project, there's a short report in the GitLab repository which validates the model and analyses its 
-			behaviour. It'd be interesting to benchmark this against a hydrodynamical code, or even a real tap. Written
-			in C, and depends heavily on the GNU Scientific Library.
-			<br /><br /> 
-			
-			<a href="https://gitlab.com/nichollsh/chaotic-dripping" target="_blank">View Chaotic Dripping on GitLab</a>
-		</p>
-		
+				This code evolves a system of massive bodies over time, accounting for their mutual gravitational 
+				interactions, assuming newtonian physics. The integrator uses the velocity-verlet method to accurately 
+				step the model forward in time. It supports dynamic time-stepping, which is helpful in cases where the
+				bodies are rapidly accelerating. There's also a Python script for animating the simulation output. It's 
+				possible to set-up the model with complex systems: it has been used to model the solar system, including
+				the Sun, planets, asteroids, and moons. Written in C.
+				<br /><br /> 
+				
+				<a href="https://gitlab.com/nichollsh/nbody-project" target="_blank">View N-body Project on GitLab</a>
+			</p>
 
-		<!-- Magic: The Gathering card printer (GUI) -->
-		<div id="magic_printer"></div>
-		<h3 class="tab1">Magic Printer</h3>
-		<p class="tab2">
-			[2021]&ast; <i>GUI for producing proxy cards for Magic: The Gathering.</i>  
-			<br /><br />
+			<!-- Conway's Game of Life -->
+			<div id="conway"></div>
+			<h3 class="tab1">Conway's Game of Life</h3>
+			<p class="tab2">
+				[2019]&ast; <i>Interactive implementation of the titular game written in C.</i>  
+				<br /><br />
 
-			'Magic: The Gathering' is a table-top card game where people compete against each other using decks
-			of various cards. The cards usually cost money, but by making fake versions ("proxies"), you can play 
-			the game without spending much money. This practice is legal as long as the proxies are not sold.
-			<br /><br /> 
-			
-			This Python code processes a file (.txt) containing all the cards in your deck, and produces images of
-			the cards required to play with such a deck. The GUI allows the user to customise their deck through
-			various options and sliders. The resultant images are intended to be used with 'FreePrints', an
-			Android app which lets you print images cheaply. Written in Python, using Qt for the interface.
-			<br /><br /> 
-			
-			<a href="https://gitlab.com/nichollsh/magic-printer" target="_blank">View Magic Printer on GitLab</a>
-		</p>
-		
+				Conway's Game of Life is an algorithm which is played on a 2D cartesian grid. Each cell of the grid is 
+				in a boolean state (alive/dead), and evolves according to a set of rules. The game evolves iteratively, 
+				with the rules determining, based on its neighbours, if each cell changes its state. This is meant to 
+				mimic population dynamics, although it's famous for producing a large array of patterns and 'machines'.
+				<br /><br /> 
 
-		<!-- N-body project -->
-		<div id="nbody"></div>
-		<h3 class="tab1">N-body integrator</h3>
-		<p class="tab2">
-			[2021]&ast; <i>Velocity verlet integrator of N-body gravitational systems.</i>  
-			<br /><br />
+				This project was originally started out of my own interest, however the timing was fortunate enough that
+				it was assigned as a final project for an undergraduate module mid-way through its development. This 
+				software implements the titular game in C, rendering it live to a GUI using OpenGL. It allows the user
+				to save and load game states from the disk, as well as interact via keyboard and mouse.
+				<br /><br /> 
+				
+				<a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Read about the game on Wikipedia</a><br/>
+				<a href="https://gitlab.com/nichollsh/conways-game-of-life" target="_blank">View Conway's Game of Life on GitLab</a>
+			</p>
 
-			This code evolves a system of massive bodies over time, accounting for their mutual gravitational 
-			interactions, assuming newtonian physics. The integrator uses the velocity-verlet method to accurately 
-			step the model forward in time. It supports dynamic time-stepping, which is helpful in cases where the
-			bodies are rapidly accelerating. There's also a Python script for animating the simulation output. It's 
-			possible to set-up the model with complex systems: it has been used to model the solar system, including
-			the Sun, planets, asteroids, and moons. Written in C.
-			<br /><br /> 
-			
-			<a href="https://gitlab.com/nichollsh/nbody-project" target="_blank">View N-body Project on GitLab</a>
-		</p>
+		<div id="ideas"></div>
+		<h2>List of ideas</h2>
 
-		<!-- Conway's Game of Life -->
-		<div id="conway"></div>
-		<h3 class="tab1">Conway's Game of Life</h3>
-		<p class="tab2">
-			[2019]&ast; <i>Interactive implementation of the titular game written in C.</i>  
-			<br /><br />
-
-			Conway's Game of Life is an algorithm which is played on a 2D cartesian grid. Each cell of the grid is 
-			in a boolean state (alive/dead), and evolves according to a set of rules. The game evolves iteratively, 
-			with the rules determining, based on its neighbours, if each cell changes its state. This is meant to 
-			mimic population dynamics, although it's famous for producing a large array of patterns and 'machines'.
-			<br /><br /> 
-
-			This project was originally started out of my own interest, however the timing was fortunate enough that
-			it was assigned as a final project for an undergraduate module mid-way through its development. This 
-			software implements the titular game in C, rendering it live to a GUI using GFLW. It allows the user
-			to save and load game states from the disk, as well as interact via keyboard and mouse.
-			<br /><br /> 
-			
-			<a href="https://gitlab.com/nichollsh/conways-game-of-life" target="_blank">View Conway's Game of Life on GitLab</a>
-		</p>
 		
 	</body>
 </html>
