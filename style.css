@@ -1,32 +1,32 @@
 h1 {
-	font-size: 1.90em;
+	font-size: 2.0em;
 }
 
 h2 {
-	font-size: 1.45em;
+	font-size: 1.6em;
 }
 
 h2 {
-	font-size: 1.15em;
+	font-size: 1.3em;
 }
 
 .mono {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.tab1 { margin-left: 2em; }
-.tab2 { margin-left: 4em; }
+.tab1 { margin-left: 3em; }
+.tab2 { margin-left: 5em; }
 
 body {
 	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 	background-color: rgb(237, 237, 237);
 	color: rgb(50, 48, 48);
 	font-size: 1.0em;
-	max-width: 38em;
+	max-width: 42em;
     word-wrap:break-word;
 	text-align: left;
-	padding-left: 1em;
-	padding-right: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
 }
 
 .right {
@@ -37,3 +37,12 @@ body {
 table td, table td * {
     vertical-align: top;
 }
+
+pre {
+	display: block;
+	font-family: monospace;
+	white-space: pre-wrap;
+	inline-size: 40em;
+    overflow-wrap: break-word;
+  }
+  
