@@ -22,7 +22,7 @@ body {
 	background-color: rgb(237, 237, 237);
 	color: rgb(50, 48, 48);
 	font-size: 1.0em;
-	max-width: 42em;
+	max-width: 48em;
     word-wrap:break-word;
 	text-align: left;
 	padding-left: 2em;
@@ -42,7 +42,7 @@ pre {
 	display: block;
 	font-family: monospace;
 	white-space: pre-wrap;
-	inline-size: 40em;
+	inline-size: 60em;
     overflow-wrap: break-word;
   }
   

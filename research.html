@@ -10,7 +10,7 @@
 
 		<a href="index.html">&nwarrow; go up to Index</a>
 		<br /><br />
-		&downarrow; jump to: <a href="#projects">Science</a>, <a href="#tools">Tools and models</a>
+		&downarrow; jump to: <a href="#projects">Research projects</a>, <a href="#tools">Tools and models</a>
 
 		<div id="preface"></div>
 		<h2>Preface</h2>
@@ -23,22 +23,68 @@
 		<div id="science"></div>
 		<h2>Research projects</h2>
 
-			<!-- Dummy project -->
-			<div id="dummy"></div>
-			<h3 class="tab1">Dummy project title</h3>
+			<!-- DPhil -->
+			<div id="dphil"></div>
+			<h3 class="tab1">DPhil project</h3>
 			<p class="tab2">
-				<i>Summary of project.</i>  
+				<i>Rocky planet atmospheric chemistry</i>  
 				<br /><br />
 
-				Lorem ipsum.
+				My current research is focussed on understanding the chemical evolution of the atmospheres of young rocky-planets. The relationship between the interior, the surface, the atmosphere, space is complex and is not something we yet understand the dynamics of. By combining various numerical models together we can trace out the evolution pathways of these planets, which is not only critical for interpreting observations, but can help elucidate their histories. 
+
 				<br /><br />
 
-				<a href="." target="_blank">Hyperlink here</a>
+				<a href="https://www.physics.ox.ac.uk/our-people/nichollsh" target="_blank">Oxford Physics profile</a>
+			</p>
+
+			<!-- Flares -->
+			<div id="flares"></div>
+			<h3 class="tab1">Self-consistent flares</h3>
+			<p class="tab2">
+				<i>Assessment of the role of temperature-chemistry coupling
+					in the evolution of gas giant atmospheres driven by stellar
+					flares</i>  
+				<br /><br />
+
+				The effect of enhanced UV irradiation associated with stellar flares on the atmospheric composition and temperature of gas
+				giant exoplanets was investigated. This was done using <a href="#atmo">a 1D radiative-convective-chemical model</a> with self-consistent  
+				between the temperature and the non-equilibrium chemistry. <br />
+				It was found that flare-driven changes to chemical composition and temperature give rise to prolonged trends in evolution
+				across a broad range of pressure levels and species. Allowing feedback between chemistry and temperature plays an important
+				role in establishing the quiescent structure of these atmospheres, and determines their evolution due to flares. It was found that
+				cooler planets are more susceptible to flares than warmer ones, seeing larger changes in composition and temperature, and that
+				temperature-chemistry feedback modifies their evolution. <br />
+				Long-term exposure to flares changes the transmission spectra of gas giant atmospheres; these changes differed when the
+				temperature structure was allowed to evolve self-consistently with the chemistry. Changes in spectral features due to the effects of
+				flares on these atmospheres can be associated with changes in composition. For a sufficiently large number of transits (> 2), the
+				effects of flares on the atmospheres of cold planets will impact observations made with JWST. It is necessary to use self-consistent
+				models of temperature and chemistry order to accurately capture the effects of flares on features in the transmission spectra of
+				cooler gas giants, but this depends heavily on the radiation environment of the planet.
+				<br /><br />
+
+				<a href="." target="_blank">Nicholls et al. (2023)</a>
 			</p>
 
 
 		<div id="tools"></div>
 		<h2>Tools and models</h2>
+
+			<!-- PROTEUS -->
+			<div id="atmo"></div>
+			<h3 class="tab1">PROTEUS</h3>
+			<p class="tab2">
+				<i>Framework for simulating the evolution of young rocky planets</i>  
+				<br /><br />
+
+				PROTEUS is a Python framework that simulates the coupled evolution of the atmospheres and interiors of rocky planets. 
+				It makes use of various submodules, such as the VULCAN chemical-kinetics code and the SOCRATES radiative-transfer code.
+				<br /><br />
+
+				Note that I do not lead the development of PROTEUS, although I have been significantly involved in its development.
+				<br /><br />
+
+				<a href="https://github.com/FormingWorlds/PROTEUS/" target="_blank">View the PROTEUS GitHub page</a>
+			</p>
 		
 			<!-- ATMO -->
 			<div id="atmo"></div>
@@ -61,6 +107,7 @@
 
 				<a href="https://www.erc-atmo.eu/?page_id=322" target="_blank">View the ATMO project website</a>
 			</p>
+			
 
 
 	</body>
