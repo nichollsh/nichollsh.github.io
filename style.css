@@ -17,6 +17,16 @@ h2 {
 .tab1 { margin-left: 3em; }
 .tab2 { margin-left: 5em; }
 
+footer {
+	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+	background-color: rgb(237, 237, 237);
+	color: rgb(119, 118, 118);
+	font-size: 1.0em;
+	max-width: 48em;
+    word-wrap:break-word;
+	text-align: left;
+}
+
 body {
 	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 	background-color: rgb(237, 237, 237);
