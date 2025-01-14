@@ -63,10 +63,15 @@ pre {
 	inline-size: 60em;
     overflow-wrap: break-word;
   }
-  
+ 
+/* Printer settings*/
 @media print{
 	.noprint{
 		display:none;
 	}
- }
- 
+}
+@page {
+	size: auto;   /* auto is the initial value */
+	margin: 0mm;  /* this affects the margin in the printer settings */
+}
+
