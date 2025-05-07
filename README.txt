@@ -1,3 +1,3 @@
-Source for nichollsh.github.io
-By Harrison Nicholls
-(I am not a web developer)
+Website source for nichollsh.github.io
+
+Copyright (C) 2025 Harrison Nicholls
