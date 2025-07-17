@@ -14,7 +14,7 @@ h3 {
 
 hr {
 	height: 2px;
-	background-color: rgb(180, 180, 180);
+	background-color: rgb(242, 249, 255);
 	border: none;
 }
 
@@ -31,7 +31,7 @@ span.blockspam {
 
 footer {
 	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-	background-color: rgb(253, 253, 253);
+	background-color: rgb(242, 249, 255);
 	color: rgb(119, 118, 118);
 	font-size: 1.0em;
 	max-width: 48em;
@@ -41,8 +41,8 @@ footer {
 
 body {
 	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-	background-color: rgb(253, 253, 253);
-	color: rgb(42, 42, 42);
+	background-color: rgb(242, 249, 255);
+	color: rgb(20, 30, 40);
 	font-size: 1.0em;
 	max-width: 48em;
     word-wrap:break-word;
