@@ -1,21 +1,20 @@
 h1 {
-	font-size: 1.9em;
+    font-size: 1.9em;
 }
 
 h2 {
-	font-size: 1.45em;
+    font-size: 1.45em;
 }
 
 h3 {
-	font-size: 1.3em;
-	margin-left: 3em;
-	margin-top: -0.2em;
+    font-size: 1.3em;
+    margin-left: 3em;
+    margin-top: -0.2em;
 }
 
 hr {
-	height: 2px;
-	background-color: rgb(242, 249, 255);
-	border: none;
+    height: 2px;
+    border: none;
 }
 
 .mono {
@@ -30,30 +29,29 @@ span.blockspam {
 }
 
 footer {
-	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-	background-color: rgb(242, 249, 255);
-	color: rgb(119, 118, 118);
-	font-size: 1.0em;
-	max-width: 48em;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    color: rgb(119, 118, 118);
+    font-size: 1.0em;
+    max-width: 48em;
     word-wrap:break-word;
-	text-align: left;
+    text-align: left;
 }
 
 body {
-	font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-	background-color: rgb(242, 249, 255);
-	color: rgb(20, 30, 40);
-	font-size: 1.0em;
-	max-width: 48em;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background-color: rgb(215, 236, 245);
+    color: rgb(20, 30, 40);
+    font-size: 1.0em;
+    max-width: 48em;
     word-wrap:break-word;
-	text-align: left;
-	padding-left: 2em;
-	padding-right: 2em;
+    text-align: left;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 .right {
-	text-align: right;
-	float: right;
+    text-align: right;
+    float: right;
 }
 
 table td, table td * {
@@ -61,21 +59,21 @@ table td, table td * {
 }
 
 pre {
-	display: block;
-	font-family: monospace;
-	white-space: pre-wrap;
-	inline-size: 60em;
+    display: block;
+    font-family: monospace;
+    white-space: pre-wrap;
+    inline-size: 60em;
     overflow-wrap: break-word;
   }
  
 /* Printer settings*/
 @media print{
-	.noprint{
-		display:none;
-	}
+    .noprint{
+        display:none;
+    }
 }
 @page {
-	size: auto;   /* auto is the initial value */
-	margin: 0mm;  /* this affects the margin in the printer settings */
+    size: auto;   /* auto is the initial value */
+    margin: 0mm;  /* this affects the margin in the printer settings */
 }
 
