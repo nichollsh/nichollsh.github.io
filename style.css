@@ -1,16 +1,19 @@
 h1 {
     font-size: 1.9em;
+    font-weight: 600;
 }
 
 h2 {
     font-size: 1.45em;
-    margin-bottom: -0.2em
+    margin-bottom: -0.2em;
+    font-weight: 600;
 }
 
 h3 {
     font-size: 1.3em;
     margin-left: 3em;
     margin-top: -0.2em;
+    font-weight: 600;
 }
 
 hr {
@@ -31,7 +34,7 @@ span.blockspam {
 
 footer {
     font-family: 'Inter', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    color: rgb(119, 118, 118);
+    color: rgb(172, 180, 192);
     font-size: 1.0em;
     max-width: 48em;
     word-wrap:break-word;
@@ -40,14 +43,65 @@ footer {
 
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Verdana, sans-serif;
-    background-color: rgb(215, 236, 245);
-    color: rgb(20, 30, 40);
+    font-weight: 500;
+    background-color: rgb(12, 18, 32);
+    /* Spacey dotted starfield (softer brightness, more size variation) */
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.70) 1.4px, transparent 2.3px), /* soft white */
+        radial-gradient(circle, rgba(240, 248, 255, 0.60) 1.0px, transparent 1.9px), /* light blue */
+        radial-gradient(circle, rgba(200, 214, 230, 0.50) 1.8px, transparent 2.6px), /* grey-blue */
+        radial-gradient(circle, rgba(255, 255, 255, 0.55) 0.8px, transparent 1.6px), /* tiny white */
+        radial-gradient(circle, rgba(186, 202, 218, 0.45) 2.2px, transparent 3.0px), /* larger pale */
+        radial-gradient(circle, rgba(220, 230, 242, 0.50) 1.6px, transparent 2.4px), /* mid pale */
+        radial-gradient(circle, rgba(255, 255, 255, 0.40) 0.6px, transparent 1.4px); /* specks */
+    /* Increased spacing with varied tile sizes for pseudo-randomness */
+    background-size:
+        240px 240px,
+        300px 260px,
+        380px 340px,
+        520px 440px,
+        650px 600px,
+        420px 360px,
+        760px 700px;
+    /* Offsets staggered per layer to avoid visible repeats */
+    background-position:
+        27px 41px,
+        113px 77px,
+        197px 163px,
+        317px 247px,
+        49px 283px,
+        160px 95px,
+        85px 345px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    color: rgb(241, 244, 248);
     font-size: 1.0em;
     max-width: 48em;
     word-wrap:break-word;
     text-align: left;
     padding-left: 2em;
     padding-right: 2em;
+}
+
+/* Reduce spacing before unordered lists */
+ul {
+    margin-top: -0.7em;
+}
+
+/* Hyperlinks - tuned for dark background */
+a {
+    color: rgb(110, 200, 255);
+}
+a:visited {
+    color: rgb(140, 210, 255);
+}
+a:hover,
+a:focus {
+    color: rgb(180, 230, 255);
+    text-decoration: underline;
+}
+a:active {
+    color: rgb(220, 245, 255);
 }
 
 .right {
@@ -71,6 +125,15 @@ pre {
 @media print{
     .noprint{
         display:none;
+    }
+    body {
+        background: white !important;
+        color: black !important;
+        background-image: none !important;
+    }
+    a, a:visited {
+        color: black !important;
+        text-decoration: none !important;
     }
 }
 @page {
