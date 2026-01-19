@@ -4,6 +4,7 @@ h1 {
 
 h2 {
     font-size: 1.45em;
+    margin-bottom: -0.2em
 }
 
 h3 {
@@ -21,7 +22,7 @@ hr {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.tab1 { margin-left: 3em; margin-top: -0.2em}
+.tab1 { margin-left: 3em; }
 .tab2 { margin-left: 5em; margin-top: -1em; }
 
 span.blockspam {
@@ -29,7 +30,7 @@ span.blockspam {
 }
 
 footer {
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Verdana, sans-serif;
     color: rgb(119, 118, 118);
     font-size: 1.0em;
     max-width: 48em;
@@ -38,7 +39,7 @@ footer {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Verdana, sans-serif;
     background-color: rgb(215, 236, 245);
     color: rgb(20, 30, 40);
     font-size: 1.0em;
