@@ -128,6 +128,7 @@ table td, table td * {
 }
 .profile-cell {
     width: 140px; /* smaller image cell */
+    max-width: 50vw; /* never exceed half the screen width */
 }
 .profile-cell img {
     display: block;
@@ -147,6 +148,10 @@ pre {
     overflow-wrap: break-word;
   }
  
+@media (max-width: 600px) {
+    .hide-on-small { display: none; }
+}
+
 /* Printer settings*/
 @media print{
     .noprint{
