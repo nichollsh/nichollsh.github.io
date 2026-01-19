@@ -113,6 +113,32 @@ table td, table td * {
     vertical-align: top;
 }
 
+/* CV profile table: transparent borders and smaller photo cell */
+.profile-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0.8em 0; /* add horizontal gap between cells */
+    margin-bottom: 0.5em;
+    border: 1px solid transparent;
+}
+.profile-table td {
+    border: 1px solid transparent;
+    vertical-align: middle; /* center content vertically in the row */
+}
+.profile-cell {
+    width: 140px; /* smaller image cell */
+}
+.profile-cell img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* keep aspect ratio without cropping */
+}
+.profile-text p {
+    margin: 0;
+}
+
 pre {
     display: block;
     font-family: monospace;
