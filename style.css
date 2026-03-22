@@ -78,7 +78,7 @@ body {
     font-size: 1.0em;
     max-width: 48em;
     word-wrap:break-word;
-    text-align: left;
+    text-align: justify;
     padding-left: 2em;
     padding-right: 2em;
 }
