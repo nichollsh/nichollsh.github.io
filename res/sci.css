@@ -1,3 +1,13 @@
+@import url('fonts.css');
+
+:root {
+    --page-updated: "28 June 2026";
+}
+
+.page-updated-date::after {
+    content: var(--page-updated);
+}
+
 h1 {
     font-size: 1.9em;
     font-weight: 600;
@@ -33,16 +43,14 @@ span.blockspam {
 }
 
 footer {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Verdana, sans-serif;
     color: rgb(172, 180, 192);
-    font-size: 1.0em;
     max-width: 48em;
     word-wrap:break-word;
     text-align: left;
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: 'Outfit', 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-weight: 500;
     background-color: rgb(12, 18, 32);
     /* Spacey dotted starfield (softer brightness, more size variation) */
@@ -107,6 +115,32 @@ a:active {
 .right {
     text-align: right;
     float: right;
+}
+
+.anchored-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    width: 8em;
+    height: 2em;
+    text-align: right;
+    background-color: rgba(245, 240, 228, 0.7);
+    border: 2px solid rgb(245, 240, 228);
+    padding: 3px;
+    color:  rgb(30, 26, 18) !important;
+    text-decoration: none;
+    font-family: 'Libre Baskerville Bold', serif;
+    font-weight: 800;
+    font-size: 0.9em;
+}
+.anchored-button:hover,
+.anchored-button:focus {
+    background-color: rgba(245, 240, 228, 0.75);
+    color: rgb(30, 26, 18) !important;
+    text-decoration: underline;
 }
 
 table td, table td * {

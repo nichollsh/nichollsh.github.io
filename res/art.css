@@ -1,0 +1,180 @@
+@import url('fonts.css');
+
+:root {
+    --page-updated: "28 June 2026. All rights reserved.";
+}
+
+.page-updated-date::after {
+    content: var(--page-updated);
+}
+
+h1 {
+    font-size: 1.9em;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.45em;
+    margin-bottom: -0.2em;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.3em;
+    margin-left: 3em;
+    margin-top: -0.2em;
+    font-weight: 600;
+}
+
+hr {
+    height: 2px;
+    border: none;
+}
+
+.mono {
+    font-family: 'Courier New', monospace;
+}
+
+.tab1 { margin-left: 3em; }
+.tab2 { margin-left: 5em; margin-top: -1em; }
+
+span.blockspam {
+  display: none;
+}
+
+footer {
+    color: rgb(140, 130, 115);
+    max-width: 48em;
+    font-size: 0.9em;
+    word-wrap:break-word;
+    text-align: left;
+}
+
+body {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 500;
+    background-color: rgb(245, 240, 228);
+    color: rgb(30, 26, 18);
+    font-size: 1.0em;
+    max-width: 48em;
+    word-wrap:break-word;
+    text-align: justify;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+ul {
+    margin-top: 0.8em;
+    list-style-type: square;
+}
+
+/* Hyperlinks - tuned for light background */
+a {
+    color: rgb(30, 80, 160);
+}
+a:visited {
+    color: rgb(80, 50, 140);
+}
+a:hover,
+a:focus {
+    color: rgb(10, 50, 120);
+    text-decoration: underline;
+}
+a:active {
+    color: rgb(0, 30, 90);
+}
+
+.right {
+    text-align: right;
+    float: right;
+}
+
+.anchored-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    width: 8em;
+    height: 2em;
+    text-align: right;
+    background-color: rgba(12, 18, 32, 0.8);
+    border: 2px solid rgb(12, 18, 32);
+    padding: 3px;
+    color: rgb(241, 244, 248) !important;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.0em;
+}
+.anchored-button:hover,
+.anchored-button:focus {
+    background-color: rgba(12, 18, 32, 0.75);
+    color: rgb(241, 244, 248) !important;
+    text-decoration: underline;
+}
+
+table td, table td * {
+    vertical-align: top;
+}
+
+/* CV profile table: transparent borders and smaller photo cell */
+.profile-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0.8em 0; /* add horizontal gap between cells */
+    margin-bottom: 0.5em;
+    border: 1px solid transparent;
+}
+.profile-table td {
+    border: 1px solid transparent;
+    vertical-align: middle; /* center content vertically in the row */
+}
+.profile-cell {
+    width: 140px; /* smaller image cell */
+    max-width: 50vw; /* never exceed half the screen width */
+}
+.profile-cell img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* keep aspect ratio without cropping */
+}
+.profile-text p {
+    margin: 0;
+}
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre-wrap;
+    inline-size: 60em;
+    overflow-wrap: break-word;
+  }
+ 
+@media (max-width: 600px) {
+    .hide-on-small { display: none; }
+}
+
+/* Printer settings*/
+@media print{
+    .noprint{
+        display:none;
+    }
+    body {
+        background: white !important;
+        color: black !important;
+        background-image: none !important;
+    }
+    a, a:visited {
+        color: black !important;
+        text-decoration: none !important;
+    }
+}
+@page {
+    size: auto;   /* auto is the initial value */
+    margin: 0mm;  /* this affects the margin in the printer settings */
+}
+
