@@ -114,6 +114,15 @@ a:active {
     color: rgb(241, 244, 248) !important;
     text-decoration: underline;
 }
+.btn-full,
+.btn-emoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.btn-emoji { display: none; }
 
 table td, table td * {
     vertical-align: top;
@@ -156,6 +165,16 @@ pre {
  
 @media (max-width: 600px) {
     .hide-on-small { display: none; }
+    .anchored-button {
+        width: 2.4em;
+        height: 2.4em;
+        font-size: 1.3em;
+        padding: 0;
+        bottom: 6%;
+        right: 6%;
+    }
+    .btn-full { display: none; }
+    .btn-emoji { display: flex; }
 }
 
 /* Printer settings*/
