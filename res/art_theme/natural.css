@@ -1,0 +1,75 @@
+@import url('../fonts.css');
+@import url('../art.css');
+
+body {
+    background-color: rgb(245, 240, 228);
+    color: rgb(30, 26, 18);
+    margin: 0;
+	padding: 0;
+}
+
+/* Hyperlinks - tuned for light background */
+a {
+    color: rgb(140, 130, 115);
+	text-decoration: none;
+	font-size: small;
+}
+
+
+.right {
+    text-align: right;
+    float: right;
+}
+
+h1 {
+	padding: 0;
+	margin: 0;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+
+	color: #000000;
+    font-size: 120%;
+    font-family: 'Libre Baskerville', sans-serif;
+	background-color: #fbfaf4;
+    border-bottom: 1px dashed #cccbb9;
+	text-align: center;
+}
+
+#content {
+	padding-top: 0.5em;
+	margin: 0 auto;
+	width: 95%;
+	text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+	float: left;
+}
+
+li a {
+    display: block;
+	margin: 6px;
+	padding: 5px;
+	background-color: #eee;
+	border: 1px solid #cccbb9;
+	text-align: center;
+}
+
+
+/* Image page */
+#imagePage h1 {
+	text-align:left;
+}
+#nav {
+	float: right;
+}
+
+#imagePage img {
+	padding: 5px;
+	background-color: #eee;
+	border: 1px solid #cccbb9;
+}
