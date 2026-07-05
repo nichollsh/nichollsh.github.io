@@ -1,7 +1,7 @@
 @import url('fonts.css');
 
 :root {
-    --page-updated: "28 June 2026. All rights reserved.";
+    --page-updated: "5 July 2026. All rights reserved.";
 }
 
 .page-updated-date::after {
@@ -9,7 +9,7 @@
 }
 
 h1 {
-    font-size: 1.9em;
+    font-size: 1.8em;
     font-weight: 600;
 }
 
@@ -52,8 +52,8 @@ footer {
 
 body {
     font-family: 'Libre Baskerville', sans-serif;
-    font-weight: 400;
-    background-color: rgb(245, 240, 228);
+    font-weight: 380;
+    background-color: rgb(231, 218, 186);
     color: rgb(30, 26, 18);
     font-size: 1.0em;
     max-width: 48em;
@@ -61,6 +61,7 @@ body {
     text-align: justify;
     padding-left: 2em;
     padding-right: 2em;
+    margin-top: 1em;
 }
 
 ul {
@@ -70,19 +71,20 @@ ul {
 
 /* Hyperlinks - tuned for light background */
 a {
-    color: rgb(30, 80, 160);
+    color: rgb(10, 45, 102);
 }
 a:visited {
-    color: rgb(80, 50, 140);
+    color: rgb(60, 30, 121);
 }
 a:hover,
 a:focus {
-    color: rgb(10, 50, 120);
+    color: rgb(10, 45, 102);
     text-decoration: underline;
 }
 a:active {
-    color: rgb(0, 30, 90);
+    color: rgb(10, 45, 102);
 }
+
 
 .right {
     text-align: right;

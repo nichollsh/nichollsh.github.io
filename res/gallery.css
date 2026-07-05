@@ -1,0 +1,49 @@
+@import url('fonts.css');
+@import url('art.css');
+
+
+/* Hyperlinks - tuned for light background */
+a {
+	text-decoration: none;
+	font-size: small;
+}
+
+.right {
+    text-align: right;
+    float: right;
+}
+
+#content {
+	width: 95%;
+	text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+	float: left;
+}
+
+li a {
+    display: table-caption;
+	margin: 6px;
+	padding: 7px;
+	background-color: #eeeeeed1;
+	border: 1px solid #cccbb9;
+	text-align: center;
+}
+
+
+/* Image page */
+#imagePage h1 {
+	text-align:left;
+}
+#nav {
+	float: right;
+}
+
+#imagePage img {
+	padding: 5px;
+}
