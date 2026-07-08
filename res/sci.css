@@ -1,7 +1,7 @@
 @import url('fonts.css');
 
 :root {
-    --page-updated: "28 June 2026";
+    --page-updated: "8 July 2026";
 }
 
 .page-updated-date::after {
