@@ -8,12 +8,14 @@ Usage:
     res/gallery.py <gallery> add <photo> [<photo> ...]
     res/gallery.py <gallery> remove <photo> [<photo> ...]
     res/gallery.py <gallery> rename <old> <new>
+    res/gallery.py <gallery> renamegallery <new>
     res/gallery.py <gallery> list
 
 Examples:
     res/gallery.py people add ~/Pictures/IMG_1234.JPG ~/Pictures/IMG_1235.JPG
     res/gallery.py people remove IMG_1234.JPG
     res/gallery.py people rename IMG_1234.JPG "Family portrait"
+    res/gallery.py people renamegallery portraits
     res/gallery.py people list
 
 The gallery name must match an existing res/art/<gallery>/ directory and
@@ -22,7 +24,9 @@ art_<gallery>.html page (e.g. "people", "places"). For "remove" and
 IMG_1234.JPG), the stored filename (e.g. img_1234.jpeg), or a path to
 either — only the stem is used to locate the stored files. "rename" only
 changes the caption text shown in the HTML page; it does not touch the
-underlying image files.
+underlying image files. "renamegallery" moves res/art/<gallery>/ to
+res/art/<new>/, renames art_<gallery>.html to art_<new>.html, and updates
+any HTML files (e.g. art.html) that link to the old page.
 """
 
 import argparse
@@ -178,6 +182,45 @@ def cmd_rename(gallery: str, old: str, new: str) -> None:
     print(f"Renamed '{old}' -> '{new}' in {gallery} ({html_path.name})")
 
 
+def cmd_renamegallery(old_gallery: str, new_gallery: str) -> None:
+    old_dir = ART_DIR / old_gallery
+    new_dir = ART_DIR / new_gallery
+    old_html = REPO_ROOT / f"art_{old_gallery}.html"
+    new_html = REPO_ROOT / f"art_{new_gallery}.html"
+
+    if not old_dir.exists():
+        raise SystemExit(f"Gallery directory not found: {old_dir.relative_to(REPO_ROOT)}")
+    if not old_html.exists():
+        raise SystemExit(f"Gallery page not found: {old_html.name}")
+    if new_dir.exists():
+        raise SystemExit(f"Target gallery directory already exists: {new_dir.relative_to(REPO_ROOT)}")
+    if new_html.exists():
+        raise SystemExit(f"Target gallery page already exists: {new_html.name}")
+
+    old_dir.rename(new_dir)
+    old_html.rename(new_html)
+
+    text = new_html.read_text()
+    text = text.replace(f"res/art/{old_gallery}/", f"res/art/{new_gallery}/")
+    new_html.write_text(text)
+
+    updated_refs = []
+    for html_file in sorted(REPO_ROOT.glob("*.html")):
+        if html_file == new_html:
+            continue
+        text = html_file.read_text()
+        new_text = text.replace(f'"art_{old_gallery}.html"', f'"art_{new_gallery}.html"')
+        if new_text != text:
+            html_file.write_text(new_text)
+            updated_refs.append(html_file.name)
+
+    print(f"Renamed gallery '{old_gallery}' -> '{new_gallery}'")
+    print(f"  {old_dir.relative_to(REPO_ROOT)} -> {new_dir.relative_to(REPO_ROOT)}")
+    print(f"  {old_html.name} -> {new_html.name}")
+    if updated_refs:
+        print(f"  updated references in: {', '.join(updated_refs)}")
+
+
 def cmd_list(gallery: str) -> None:
     _, html_path = gallery_paths(gallery)
     text = html_path.read_text()
@@ -216,6 +259,11 @@ def main(argv: list[str]) -> None:
     rename_parser.add_argument("old", help="filename or path identifying the existing photo")
     rename_parser.add_argument("new", help="new caption text to display")
 
+    renamegallery_parser = subparsers.add_parser(
+        "renamegallery", help="rename the whole gallery, moving its files and updating the HTML"
+    )
+    renamegallery_parser.add_argument("new", help="new gallery name")
+
     subparsers.add_parser("list", help="list photos currently in the gallery")
 
     args = parser.parse_args(argv[1:])
@@ -226,6 +274,8 @@ def main(argv: list[str]) -> None:
         cmd_remove(args.gallery, args.photos)
     elif args.command == "rename":
         cmd_rename(args.gallery, args.old, args.new)
+    elif args.command == "renamegallery":
+        cmd_renamegallery(args.gallery, args.new)
     elif args.command == "list":
         cmd_list(args.gallery)
 
