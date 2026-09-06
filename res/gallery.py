@@ -5,6 +5,7 @@ Ingests, removes, and lists photos in res/art/<gallery>/, keeping the
 gallery's HTML page (art_<gallery>.html) in sync.
 
 Usage:
+    res/gallery.py <gallery> init
     res/gallery.py <gallery> add <photo> [<photo> ...]
     res/gallery.py <gallery> remove <photo> [<photo> ...]
     res/gallery.py <gallery> rename <old> <new>
@@ -12,21 +13,25 @@ Usage:
     res/gallery.py <gallery> list
 
 Examples:
+    res/gallery.py landscapes init
     res/gallery.py people add ~/Pictures/IMG_1234.JPG ~/Pictures/IMG_1235.JPG
     res/gallery.py people remove IMG_1234.JPG
     res/gallery.py people rename IMG_1234.JPG "Family portrait"
     res/gallery.py people renamegallery portraits
     res/gallery.py people list
 
-The gallery name must match an existing res/art/<gallery>/ directory and
-art_<gallery>.html page (e.g. "people", "places"). For "remove" and
-"rename", <photo>/<old> may be given as the original filename (e.g.
-IMG_1234.JPG), the stored filename (e.g. img_1234.jpeg), or a path to
-either — only the stem is used to locate the stored files. "rename" only
-changes the caption text shown in the HTML page; it does not touch the
-underlying image files. "renamegallery" moves res/art/<gallery>/ to
-res/art/<new>/, renames art_<gallery>.html to art_<new>.html, and updates
-any HTML files (e.g. art.html) that link to the old page.
+Except for "init", the gallery name must match an existing
+res/art/<gallery>/ directory and art_<gallery>.html page (e.g. "people",
+"places"). For "remove" and "rename", <photo>/<old> may be given as the
+original filename (e.g. IMG_1234.JPG), the stored filename (e.g.
+img_1234.jpeg), or a path to either — only the stem is used to locate the
+stored files. "rename" only changes the caption text shown in the HTML
+page; it does not touch the underlying image files. "renamegallery" moves
+res/art/<gallery>/ to res/art/<new>/, renames art_<gallery>.html to
+art_<new>.html, and updates any HTML files (e.g. art.html) that link to
+the old page. "init" creates an empty res/art/<gallery>/{full,thumb}/ and
+a new art_<gallery>.html page with no photo entries; it does not add a
+link to the new page from art.html.
 """
 
 import argparse
@@ -221,6 +226,64 @@ def cmd_renamegallery(old_gallery: str, new_gallery: str) -> None:
         print(f"  updated references in: {', '.join(updated_refs)}")
 
 
+GALLERY_TEMPLATE = """\
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Harrison Nicholls art page">
+<meta name="keywords" content="art, illustration, Harrison Nicholls, photography">
+<meta name="author" content="Harrison Nicholls">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="res/favicon.jpg" />
+
+<title>Harrison Nicholls</title>
+<link rel="stylesheet" type="text/css" href="res/gallery.css">
+
+</head>
+<body id="collectionPage">
+
+<h1> Harrison Nicholls / Art</h1>
+
+<b><a href="art.html">&nwarrow; go up to Index</a></b>
+
+<br/>
+
+<h2>{title}</h2>
+<p>Sample gallery. Page updated <span class="page-updated-date"></span></p>
+
+<div id="content"><ul>
+</ul></div>
+
+<footer>
+        <p>Page updated <span class="page-updated-date"></span></p>
+</footer>
+
+
+</body>
+</html>
+"""
+
+
+def cmd_init(gallery: str) -> None:
+    gallery_dir = ART_DIR / gallery
+    html_path = REPO_ROOT / f"art_{gallery}.html"
+
+    if gallery_dir.exists():
+        raise SystemExit(f"Gallery directory already exists: {gallery_dir.relative_to(REPO_ROOT)}")
+    if html_path.exists():
+        raise SystemExit(f"Gallery page already exists: {html_path.name}")
+
+    (gallery_dir / "full").mkdir(parents=True)
+    (gallery_dir / "thumb").mkdir(parents=True)
+
+    html_path.write_text(GALLERY_TEMPLATE.format(title=gallery.capitalize()))
+
+    print(f"Initialized gallery '{gallery}'")
+    print(f"  {gallery_dir.relative_to(REPO_ROOT)}/full/, {gallery_dir.relative_to(REPO_ROOT)}/thumb/")
+    print(f"  {html_path.name}")
+
+
 def cmd_list(gallery: str) -> None:
     _, html_path = gallery_paths(gallery)
     text = html_path.read_text()
@@ -264,6 +327,8 @@ def main(argv: list[str]) -> None:
     )
     renamegallery_parser.add_argument("new", help="new gallery name")
 
+    subparsers.add_parser("init", help="create a new, empty gallery")
+
     subparsers.add_parser("list", help="list photos currently in the gallery")
 
     args = parser.parse_args(argv[1:])
@@ -276,6 +341,8 @@ def main(argv: list[str]) -> None:
         cmd_rename(args.gallery, args.old, args.new)
     elif args.command == "renamegallery":
         cmd_renamegallery(args.gallery, args.new)
+    elif args.command == "init":
+        cmd_init(args.gallery)
     elif args.command == "list":
         cmd_list(args.gallery)
 
